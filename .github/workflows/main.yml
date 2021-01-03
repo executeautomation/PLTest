@@ -23,4 +23,4 @@ jobs:
       - uses: microsoft/playwright-github-action@v1
 
       - name: Install dependencies and run tests
-        run: npm install && jest
+        run: npm install && npx folio --param browserName=chromium
