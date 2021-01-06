@@ -8,8 +8,9 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    container: 
+      image: mcr.microsoft.com/playwright:bionic
 
     strategy:
       matrix:
@@ -19,8 +20,6 @@ jobs:
       - uses: actions/checkout@v2
 
       - uses: actions/setup-node@v1
-
-      - uses: mcr.microsoft.com/playwright:bionic
 
       - name: Run tests
         run: npx folio --param browserName=chromium video
