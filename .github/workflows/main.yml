@@ -12,14 +12,8 @@ jobs:
     container: 
       image: mcr.microsoft.com/playwright:bionic
 
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x]
-
     steps:
       - uses: actions/checkout@v2
-
-      - uses: actions/setup-node@v1
 
       - name: Run tests
         run: npx folio --param browserName=chromium video
