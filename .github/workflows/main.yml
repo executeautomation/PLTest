@@ -9,8 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: 
-      image: mcr.microsoft.com/playwright:bionic
 
     steps:
       - uses: actions/checkout@v2
