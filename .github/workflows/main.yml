@@ -20,10 +20,10 @@ jobs:
 
       - uses: actions/setup-node@v1
 
-      - uses: microsoft/playwright-github-action@v1
+      - uses: mcr.microsoft.com/playwright:bionic
 
-      - name: Install dependencies and run tests
-        run: npm install && npx folio --param browserName=chromium video
+      - name: Run tests
+        run: npx folio --param browserName=chromium video
         
       - uses: actions/upload-artifact@v2
         if: ${{ always() }}
