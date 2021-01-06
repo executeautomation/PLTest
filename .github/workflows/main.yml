@@ -22,6 +22,9 @@ jobs:
   
       - name: Install some missing dependency 
         run: npm install --save-dev @babel/plugin-proposal-class-properties
+        
+      - name: Install Babel
+        run: npm install --save-dev @babel/core
       
 
       - name: Install dependencies and run tests
