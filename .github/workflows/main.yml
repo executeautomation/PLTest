@@ -15,11 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         
-      - name: Install some missing dependency 
-        run: npm install --save-dev @babel/plugin-proposal-class-properties
-
       - name: Run tests
-        run: npx folio --param browserName=chromium video
+        uses: mcr.microsoft.com/playwright:bionic
+        with:
+          args: npx folio --param browserName=chromium video
         
       - uses: actions/upload-artifact@v2
         if: ${{ always() }}
