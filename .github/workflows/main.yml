@@ -14,6 +14,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        
+      - name: Install some missing dependency 
+        run: npm install --save-dev @babel/plugin-proposal-class-properties
 
       - name: Run tests
         run: npx folio --param browserName=chromium video
